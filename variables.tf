@@ -2,6 +2,8 @@ variable "avatar" {
   description = "GitLab Group avatar file path"
   type        = string
 }
+# Variables available in badges
+# https://docs.gitlab.com/user/project/badges/#placeholders
 variable "badges" {
   description = "List of group badges to create"
   type = list(object({
@@ -11,17 +13,17 @@ variable "badges" {
   }))
   default = [
     {
-      name      = "badge-coverage"
+      name      = "coverage"
       link_url  = "https://%%{gitlab_server}/%%{project_path}/-/jobs"
       image_url = "https://%%{gitlab_server}/%%{project_path}/badges/%%{default_branch}/coverage.svg"
     },
     {
-      name      = "badge-pipeline"
+      name      = "pipeline"
       link_url  = "https://%%{gitlab_server}/%%{project_path}/-/pipelines?ref=%%{default_branch}"
       image_url = "https://%%{gitlab_server}/%%{project_path}/badges/%%{default_branch}/pipeline.svg"
     },
     {
-      name      = "badge-release"
+      name      = "release"
       link_url  = "https://%%{gitlab_server}/%%{project_path}/-/releases"
       image_url = "https://%%{gitlab_server}/%%{project_path}/-/badges/release.svg"
     },
