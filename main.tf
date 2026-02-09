@@ -30,12 +30,12 @@ resource "gitlab_group" "self" {
   visibility_level  = "internal"
   wiki_access_level = "disabled"
   #default_branch_protection_defaults {}
-  #push_rules {  }
+  #push_rules { }
 }
 
 # N/A external wiki
 
-# Pipeline status badges with placeholders will be enabled
+# Pipeline status badges with placeholders
 resource "gitlab_group_badge" "self" {
   for_each   = { for badge in var.badges : badge.name => badge }
   group      = gitlab_group.self.id

@@ -19,7 +19,7 @@ Basic usage of this module is as follows:
 
 ```hcl
 module "example" {
-    source = "wisk-aero-oss/<module-name>/google"
+    source = "wisk-aero-oss/group/gitlab"
     # Recommend pinning every module to a specific version
     # version = "x.x.x"
     # Required variables
