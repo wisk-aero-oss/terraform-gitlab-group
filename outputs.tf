@@ -1,5 +1,8 @@
-
-output "sample_output" {
-  description = "output value description"
-  value       = "sample" # expression or reference to value
+output "full_path" {
+  description = "Group full path"
+  value       = gitlab_group.self.full_path
+}
+output "id" {
+  description = "Group ID"
+  value       = gitlab_group.self.id
 }

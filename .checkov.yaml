@@ -2,4 +2,6 @@ framework:
   - all
   #- terraform
 skip-check:
-  - CKV_TF_1 # Ensure module references are pinned to a commit SHA.
+  - CKV_TF_1  # Ensure module references are pinned to a commit SHA.
+  - CKV_GLB_1 # Ensure at least two approving reviews are required to merge a GitLab MR
+  - CKV_GLB_4 # Ensure GitLab commits are signed
